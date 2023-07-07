@@ -2,8 +2,12 @@ import styled from 'styled-components';
 import React from 'react';
 import Product from './Product';
 
-const Ul = styled.ul`
+const ItemContainer = styled.ul`
 list-style: none;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+padding:10px;
 ` 
 
 const ProductList = ({products}) => {
@@ -19,9 +23,9 @@ const productComponents = products.map((product) => {
 
     return (
 
-        <Ul>
+        <ItemContainer>
          {productComponents}
-        </Ul>
+        </ItemContainer>
     );
 }
 

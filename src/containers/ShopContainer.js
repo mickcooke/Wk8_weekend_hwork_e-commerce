@@ -11,6 +11,11 @@ background-color: black;
 margin:0;
 padding:1em;
 `
+const Paragraph = styled.p`
+margin:0;
+padding: 1em;
+font-size:1em;
+`
 
 const ShopContainer = () => {
     const [products, setProducts] = useState([]);
@@ -19,12 +24,42 @@ const ShopContainer = () => {
     const productInventory = [
         {
             name: "Spitfire Studio Brass",
-            price: 160,
+            price: 160.00,
             description: "Captured in a space with almost no natural reverb, this versatile library brings out the fine detail of instruments and lets you choose your own reverbs. Ideal for classical, jazz, pop and more.",
             image: "image1.jpeg",
             id: 1
 
-        }
+        },
+
+        {
+            name: "Spitfire Symphonic Strings",
+            price: 699.00,
+            description: "Part of our flagship orchestral range. 60 players performing 175 articulations, including legatos, in the reverberant surroundings of The Hall at AIR Studios, the home of blockbuster film scores.",
+            image: "image2.jpeg",
+            id: 2
+
+        },
+
+        {
+            name: "Spitfire Studio Woodwinds",
+            price: 169.00,
+            description: "Captured in a space with almost no natural reverb, this versatile library brings out the fine detail of instruments and lets you choose your own reverbs. Ideal for classical, jazz, pop and more.",
+            image: "image3.jpeg",
+            id: 3
+
+        },
+
+        {
+            name: "Eric Whitacre Choir",
+            price: 549.00,
+            description: "Crafted and conducted by Grammy winner Eric Whitacre and showcasing his elite family of singers, this encyclopaedia of the voice will enrich your compositions.",
+            image: "image4.jpeg",
+            id: 4
+
+        },
+
+
+
     ]
 
 const getProducts = () => {
@@ -39,7 +74,7 @@ useEffect(() => {
 
         <>
         <Title>SPITFIRE AUDIO</Title>
-        <p>This is the Shop Container</p>
+        <Paragraph>Our most popular:</Paragraph>
         <ProductList products={products}/>
         </>
     )

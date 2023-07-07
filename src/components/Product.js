@@ -9,10 +9,33 @@ margin:0;
 padding: 1em;
 font-size:0.5em;
 `
-const Div = styled.div`
-width: 120px;
+const BigParagraph = styled(Paragraph)`
+font-weight: bold;
+font-size: 0.6em;
+`
+
+const PriceText = styled(Paragraph)`
+font-weight: bold;
+font-size: 1em;
+`
+
+const ItemBox = styled.div`
+width: 160px;
 text-align: center;
-outline: solid 1px black;
+// outline: solid 1px black;
+`
+
+const DescriptionBox = styled(ItemBox)`
+// outline: solid 1px black;
+text-align: left;
+`
+
+const Button = styled.button`
+font-size: 0.5em;
+font-weight: bold;
+  padding: 1em;
+  margin: 0.5em;
+  border: 2px solid black;
 `
 
 const Product = ({product}) => {
@@ -20,11 +43,17 @@ const Product = ({product}) => {
     return (
   
     <li>
-        <Div>
+        <ItemBox>
         <Img src={require(`../images/${product.image}`)}/>
-        <Paragraph>{product.name}</Paragraph>
-        <Paragraph>£{product.price}</Paragraph>
-        </Div>
+        <BigParagraph>{product.name}</BigParagraph>
+        <DescriptionBox>
+        <Paragraph>{product.description}</Paragraph>
+        </DescriptionBox>
+        <PriceText>£{product.price}</PriceText>
+        <Button>ADD TO CART</Button>
+        <br></br>
+        <br></br>
+        </ItemBox>
     </li>
     )
 
