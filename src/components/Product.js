@@ -7,6 +7,7 @@ const Product = ({product}) => {
     <li>
         <article>
         <p>{product.name}: £{product.price}</p>
+        <img src={require(`../images/${product.image}`)}/>
         </article>
 
     </li>

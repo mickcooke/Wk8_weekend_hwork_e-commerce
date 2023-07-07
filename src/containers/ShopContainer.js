@@ -11,7 +11,7 @@ const ShopContainer = () => {
             name: "Brass",
             price: 160,
             description: "blah",
-            image: "image1",
+            image: "image1.jpeg",
             id: 1
 
         }
