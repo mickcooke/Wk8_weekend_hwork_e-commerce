@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import React, { useState, useEffect} from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //NEW
 import ProductList from '../components/ProductList';
+import NavBar from '../components/NavBar';
+import Basket from '../components/Basket';
 
 const Title = styled.h1`
 font-family: 'Open Sans';
@@ -9,7 +12,8 @@ font-size:1.5em;
 color: #fff;
 background-color: black;
 margin:0;
-padding:1em;
+padding-top: 10px;
+// padding:0.5em;
 `
 const Paragraph = styled.p`
 margin:0;
@@ -74,8 +78,16 @@ useEffect(() => {
 
         <>
         <Title>SPITFIRE AUDIO</Title>
-        <Paragraph>Our most popular:</Paragraph>
-        <ProductList products={products}/>
+
+    <Router>
+        <NavBar/>
+    <Routes>
+      <Route path="/" element={<ProductList products={products}/>}/>
+      <Route path="/basket" element={<Basket/>} />
+    </Routes>
+  </Router>
+
+        
         </>
     )
 
