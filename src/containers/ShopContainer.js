@@ -23,6 +23,7 @@ font-size:1em;
 
 const ShopContainer = () => {
     const [products, setProducts] = useState([]);
+    const [selectedProductId, setSelectedProductId] = useState("");
     const [basket, setBasket] = useState([]);
 
     const productInventory = [
@@ -74,6 +75,28 @@ useEffect(() => {
   getProducts();
 }, [])
 
+const findProductById = (id) => {
+  return products.find((product) => {
+    return product.id === id;
+  });
+}
+
+// const handleProductSelected = id => {
+//     const selectedProduct = findProductById(id);
+//     if (basket.includes(selectedProduct)){
+//         return null
+//     }else{
+//         const updatedBasket = [...basket, selectedProduct];
+//         setBasket(updatedBasket);
+//         console.log(basket.length);
+//     }
+// }
+
+const handleProductSelected = id => {
+    console.log(id);
+
+}
+
     return (
 
         <>
@@ -82,7 +105,7 @@ useEffect(() => {
     <Router>
         <NavBar/>
     <Routes>
-      <Route path="/" element={<ProductList products={products}/>}/>
+      <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
       <Route path="/basket" element={<Basket/>} />
     </Routes>
   </Router>

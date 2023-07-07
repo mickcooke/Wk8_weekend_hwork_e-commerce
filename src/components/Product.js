@@ -38,7 +38,12 @@ font-weight: bold;
   border: 2px solid black;
 `
 
-const Product = ({product}) => {
+const Product = ({product, onProductSelected}) => {
+
+    const handleClick = event => {
+        onProductSelected(event.target.value);
+
+    }
 
     return (
   
@@ -49,8 +54,8 @@ const Product = ({product}) => {
         <DescriptionBox>
         <Paragraph>{product.description}</Paragraph>
         </DescriptionBox>
-        <PriceText>£{product.price}</PriceText>
-        <Button>ADD TO CART</Button>
+        <PriceText>£{product.price.toFixed(2)}</PriceText>
+        <Button onClick={handleClick} key={product.id} value={product.id}>ADD TO CART</Button>
         <br></br>
         <br></br>
         </ItemBox>

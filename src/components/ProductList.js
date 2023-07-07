@@ -10,12 +10,13 @@ justify-content: space-around;
 padding:10px;
 ` 
 
-const ProductList = ({products}) => {
+const ProductList = ({products, onProductSelected}) => {
 
 const productComponents = products.map((product) => {
     return (<Product 
         key={product.id} 
         product={product}
+        onProductSelected={onProductSelected}
             />);
   
             }
