@@ -23,8 +23,8 @@ font-size:1em;
 
 const ShopContainer = () => {
     const [products, setProducts] = useState([]);
-    const [selectedProductId, setSelectedProductId] = useState("");
-    const [basket, setBasket] = useState([]);
+    // const [selectedProductId, setSelectedProductId] = useState("");
+    const [basket, setBasket] = useState(['']);
 
     const productInventory = [
         {
@@ -94,8 +94,10 @@ const findProductById = (id) => {
 
 const handleProductSelected = id => {
     const selectedProduct = findProductById(id);
-    const updatedBasket = [...basket, selectedProduct];
+    const selectedProductName = selectedProduct.name;
+    const updatedBasket = [...basket, selectedProductName];
     setBasket(updatedBasket);
+    console.log(basket.length);
 }
 
     return (
@@ -107,7 +109,7 @@ const handleProductSelected = id => {
         <NavBar/>
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
-      <Route path="/basket" element={<Basket/>} />
+      <Route path="/basket" element={<Basket basket={basket}/>}/>
     </Routes>
   </Router>
 
