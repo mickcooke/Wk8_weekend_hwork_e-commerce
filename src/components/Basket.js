@@ -1,5 +1,6 @@
 import React from 'react';
 import BasketItem from './BasketItem';
+import './BasketItem.css';
 
 const Basket = ({basket, total}) => {
 
@@ -19,9 +20,22 @@ const Basket = ({basket, total}) => {
   return (
 
     <>
-    <p>Shopping Cart</p>
+    <div className='grid-columns'>
+        <div>
+            <h4>Shopping Cart</h4>
+        </div>
+    </div>
     {basketItemNodes}
-    <p>Total: £{total.toFixed(2)}</p>
+    <div className='grid-columns'>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>
+            <b>Total:</b> 
+        </div>
+        <div>
+            <b>£{total.toFixed(2)}</b> 
+        </div>
+    </div>
     </>
   );
 

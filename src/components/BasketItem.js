@@ -1,5 +1,6 @@
 
 import React from "react";
+import './BasketItem.css';
 
 const BasketItem = ({basketItem}) => {
 
@@ -12,11 +13,14 @@ const BasketItem = ({basketItem}) => {
 
   return (
     <>
-    <p>
-    <span>{basketItem.name}</span>
-    <span>&nbsp;&nbsp;£{basketItem.price.toFixed(2)}</span>
-    </p>
-   
+    <div className="grid-columns">
+        <div>
+            {basketItem.name}
+        </div>
+        <div>  
+            £{basketItem.price.toFixed(2)}    
+        </div>
+    </div>
     </>
 
   )}

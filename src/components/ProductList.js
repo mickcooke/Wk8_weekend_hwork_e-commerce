@@ -23,10 +23,13 @@ const productComponents = products.map((product) => {
 );
 
     return (
-
+<>
+<h4>&nbsp;&nbsp;&nbsp;Recommended products:</h4>
         <ItemContainer>
          {productComponents}
         </ItemContainer>
+
+        </>
     );
 }
 

@@ -1,0 +1,6 @@
+.grid-columns {
+    margin: 1rem auto;
+    width: min(90%, 75rem);
+    display: grid;
+    grid-template-columns:70% 30%;
+}
