@@ -1,7 +1,7 @@
 import React from 'react';
 import BasketItem from './BasketItem';
 
-const Basket = ({basket}) => {
+const Basket = ({basket, total}) => {
 
  
     const basketItemNodes = basket.map((basketItem) => {
@@ -14,13 +14,18 @@ const Basket = ({basket}) => {
         
     );
 
+
+
   return (
 
     <>
     <p>Shopping Cart</p>
     {basketItemNodes}
+    <p>Total: £{total.toFixed(2)}</p>
     </>
   );
+
+
 };
 
 export default Basket;

@@ -12,8 +12,10 @@ const BasketItem = ({basketItem}) => {
 
   return (
     <>
-    <p>{basketItem.name}</p>
-    <p>{basketItem.price.toFixed(2)}</p>
+    <p>
+    <span>{basketItem.name}</span>
+    <span>&nbsp;&nbsp;£{basketItem.price.toFixed(2)}</span>
+    </p>
    
     </>
 

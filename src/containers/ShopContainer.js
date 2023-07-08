@@ -25,6 +25,7 @@ const ShopContainer = () => {
     const [products, setProducts] = useState([]);
     // const [selectedProductId, setSelectedProductId] = useState("");
     const [basket, setBasket] = useState([]);
+    const [total, setTotal] = useState(0);
 
     const productInventory = [
         {
@@ -92,9 +93,14 @@ const findProductById = (id) => {
 //     }
 // }
 
+const addToTotal = amount => {
+    setTotal(total + amount);
+}
+
 const handleProductSelected = id => {
     const selectedProduct = findProductById(id);
     const updatedBasket = [...basket, selectedProduct];
+    addToTotal(selectedProduct.price);
     setBasket(updatedBasket);
 }
 
@@ -107,7 +113,7 @@ const handleProductSelected = id => {
         <NavBar basket={basket}/>
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
-      <Route path="/basket" element={<Basket basket={basket}/>}/>
+      <Route path="/basket" element={<Basket basket={basket} total={total}/>}/>
     </Routes>
   </Router>
 
