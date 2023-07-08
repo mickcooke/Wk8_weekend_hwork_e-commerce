@@ -3,6 +3,12 @@ import React from "react";
 
 const BasketItem = ({basketItem}) => {
 
+    if (!basketItem){
+        return (
+            <p>No items in cart</p>
+        )
+    }else{
+
 
   return (
     <>
@@ -12,7 +18,7 @@ const BasketItem = ({basketItem}) => {
     <p>{basketItem}</p>
     </>
 
-  )
+  )}
 };
 
 export default BasketItem;

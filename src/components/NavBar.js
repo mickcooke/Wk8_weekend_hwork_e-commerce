@@ -13,7 +13,7 @@ color: white;
 text-decoration: None;
 `
 
-const NavBar = () => {
+const NavBar = ({basket}) => {
   
     return (
         <NavBarContainer>
@@ -21,7 +21,7 @@ const NavBar = () => {
                 <Link to= "/"><NavText>Products</NavText></Link>
             </span>
             <span>
-                <Link to= "/basket"><NavText>Cart</NavText></Link>
+                <Link to= "/basket"><NavText>Cart ({basket.length})</NavText></Link>
             </span>
             </NavBarContainer>
        

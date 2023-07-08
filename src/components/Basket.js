@@ -1,18 +1,15 @@
 import React from 'react';
 import BasketItem from './BasketItem';
 
-const Basket = ({basket}) => {
+const Basket = ({basket, index}) => {
 
+ 
     const basketItemNodes = basket.map(basketItem => {
 
-        if (!basket){
-            return (
-                <p>No items in cart</p>
-            )
-        }
+    
 
         return (
-            <BasketItem basketItem={basketItem}></BasketItem>
+            <BasketItem key={index} basketItem={basketItem}></BasketItem>
 
         );
 

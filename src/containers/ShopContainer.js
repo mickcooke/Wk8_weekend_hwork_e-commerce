@@ -24,7 +24,7 @@ font-size:1em;
 const ShopContainer = () => {
     const [products, setProducts] = useState([]);
     // const [selectedProductId, setSelectedProductId] = useState("");
-    const [basket, setBasket] = useState(['']);
+    const [basket, setBasket] = useState([]);
 
     const productInventory = [
         {
@@ -106,7 +106,7 @@ const handleProductSelected = id => {
         <Title>SPITFIRE AUDIO</Title>
 
     <Router>
-        <NavBar/>
+        <NavBar basket={basket}/>
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
       <Route path="/basket" element={<Basket basket={basket}/>}/>
