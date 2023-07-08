@@ -94,10 +94,8 @@ const findProductById = (id) => {
 
 const handleProductSelected = id => {
     const selectedProduct = findProductById(id);
-    const selectedProductName = selectedProduct.name;
-    const updatedBasket = [...basket, selectedProductName];
+    const updatedBasket = [...basket, selectedProduct];
     setBasket(updatedBasket);
-    console.log(basket.length);
 }
 
     return (
