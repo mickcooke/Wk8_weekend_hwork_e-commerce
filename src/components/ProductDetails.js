@@ -2,6 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {useParams} from "react-router-dom";
 import SelectProductButton from './SelectProductButton';
+import './ProductDetails.css';
+
 
 const ProductDetails = ({products, onProductSelected}) => {
   
@@ -19,10 +21,12 @@ if(!selectedProduct){
 
  return (
     <>
-    
- <p>{selectedProduct.name}</p>
+    <div className='details-container'>
+ <p><b>{selectedProduct.name}</b></p>
  <p>{selectedProduct.description}</p>
+ <h3>£{selectedProduct.price.toFixed(2)}</h3>
  <SelectProductButton onProductSelected={onProductSelected} product={selectedProduct} />
+ </div>
  </>
    
  )

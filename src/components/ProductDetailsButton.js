@@ -1,21 +1,16 @@
 import React from "react";
 import './ProductDetailsButton.css';
+import {Link} from "react-router-dom";
 
 
 const ProductDetailsButton = ({product}) => {
 
-
-    const handleClick = event => {
-        onProductSelected(event.target.value);
-
-                                };
-
     return (
 
 
-    <>
-        <button className='btn' onClick={handleClick} key={product.id} value={product.id}>GO TO PRODUCT</button>  
-    </>
+        <>
+        <Link to={`/product/${product.id}`}><button className="btn" key={product.id}>PRODUCT DETAIL</button></Link> 
+        </>
 
 
             )

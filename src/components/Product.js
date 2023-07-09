@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React from "react";
-import SelectProductButton from './SelectProductButton';
+import ProductDetailsButton from './ProductDetailsButton';
 
 const Img = styled.img`
 width:100px;
@@ -48,7 +48,7 @@ const Product = ({product, onProductSelected}) => {
         <Paragraph>{product.description}</Paragraph>
         </DescriptionBox>
         <PriceText>£{product.price.toFixed(2)}</PriceText>
-        <SelectProductButton onProductSelected={onProductSelected} product={product} />
+        <ProductDetailsButton product={product} />
         <br></br>
         <br></br>
         </ItemBox>
