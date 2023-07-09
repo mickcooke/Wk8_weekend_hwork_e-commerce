@@ -130,7 +130,7 @@ const handleProductSelected = id => {
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
       <Route path="/basket" element={<Basket basket={basket} total={total} delBasketItem={handleDelBasketItem}/>}/>
-      <Route path="/product/:id" element={<ProductDetails products={products}/>}/>
+      <Route path="/product/:id" element={<ProductDetails products={products} onProductSelected={handleProductSelected}/>}/>
     </Routes>
   </Router>
 

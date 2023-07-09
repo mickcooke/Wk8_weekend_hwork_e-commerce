@@ -1,8 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {useParams} from "react-router-dom";
+import SelectProductButton from './SelectProductButton';
 
-const ProductDetails = ({products}) => {
+const ProductDetails = ({products, onProductSelected}) => {
   
  const {id} = useParams();
  const productId = parseInt(id)
@@ -21,12 +22,9 @@ if(!selectedProduct){
     
  <p>{selectedProduct.name}</p>
  <p>{selectedProduct.description}</p>
+ <SelectProductButton onProductSelected={onProductSelected} product={selectedProduct} />
  </>
-    // <>
    
-    // <p>£{selectedProduct.price.toFixed(2)}</p>
-    // <img src={require(`../images/${selectedProduct.image}`)}/>
-    // </>
  )
 
 }
