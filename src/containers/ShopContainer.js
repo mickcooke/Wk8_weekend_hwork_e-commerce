@@ -108,9 +108,13 @@ const subtractFromTotal = amount => {
 
 const handleProductSelected = id => {
     const selectedProduct = findProductById(id);
+    if(basket.includes(selectedProduct)) {
+        return null}else{
     const updatedBasket = [...basket, selectedProduct];
     addToTotal(selectedProduct.price);
     setBasket(updatedBasket);
+
+};
 }
 
 
