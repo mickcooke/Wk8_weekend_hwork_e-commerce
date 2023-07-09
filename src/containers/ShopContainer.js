@@ -82,19 +82,24 @@ const findProductById = (id) => {
   });
 }
 
-// const handleProductSelected = id => {
-//     const selectedProduct = findProductById(id);
-//     if (basket.includes(selectedProduct)){
-//         return null
-//     }else{
-//         const updatedBasket = [...basket, selectedProduct];
-//         setBasket(updatedBasket);
-//         console.log(basket.length);
-//     }
-// }
+const handleDelBasketItem = id => {
+    const productToDelete= findProductById(id)
+    subtractFromTotal(productToDelete.price);
+    const filteredBasket = basket.filter((product) => {
+        return product.id !== id
+    } );
+    setBasket(filteredBasket);
+   
+
+}
+
 
 const addToTotal = amount => {
     setTotal(total + amount);
+}
+
+const subtractFromTotal = amount => {
+    setTotal(total - amount);
 }
 
 const handleProductSelected = id => {
@@ -103,6 +108,8 @@ const handleProductSelected = id => {
     addToTotal(selectedProduct.price);
     setBasket(updatedBasket);
 }
+
+
 
     return (
 
@@ -113,7 +120,7 @@ const handleProductSelected = id => {
         <NavBar basket={basket}/>
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
-      <Route path="/basket" element={<Basket basket={basket} total={total}/>}/>
+      <Route path="/basket" element={<Basket basket={basket} total={total} delBasketItem={handleDelBasketItem}/>}/>
     </Routes>
   </Router>
 

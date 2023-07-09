@@ -2,13 +2,14 @@ import React from 'react';
 import BasketItem from './BasketItem';
 import './BasketItem.css';
 
-const Basket = ({basket, total}) => {
+const Basket = ({basket, total, delBasketItem}) => {
 
  
     const basketItemNodes = basket.map((basketItem) => {
     return (<BasketItem 
         key={basketItem.id} 
         basketItem={basketItem}
+        delBasketItem={delBasketItem}
         />);
 
                     }
