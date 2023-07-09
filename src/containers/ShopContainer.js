@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //NEW
 import ProductList from '../components/ProductList';
 import NavBar from '../components/NavBar';
 import Basket from '../components/Basket';
+import ProductDetails from '../components/ProductDetails';
 
 const Title = styled.h1`
 font-family: 'Open Sans';
@@ -23,7 +24,7 @@ font-size:1em;
 
 const ShopContainer = () => {
     const [products, setProducts] = useState([]);
-    // const [selectedProductId, setSelectedProductId] = useState("");
+    const [selectedProduct, setSelectedProduct] = useState();
     const [basket, setBasket] = useState([]);
     const [total, setTotal] = useState(0);
 
@@ -129,6 +130,7 @@ const handleProductSelected = id => {
     <Routes>
       <Route path="/" element={<ProductList products={products} onProductSelected={handleProductSelected}/>}/>
       <Route path="/basket" element={<Basket basket={basket} total={total} delBasketItem={handleDelBasketItem}/>}/>
+      <Route path="/product/:id" element={<ProductDetails products={products}/>}/>
     </Routes>
   </Router>
 
