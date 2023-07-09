@@ -39,16 +39,8 @@ const Basket = ({basket, total}) => {
     // </>
 
 <>
-    <div className='grid-columns'>
-        <div>
+    <div className='margin'>
             <h4>Shopping Cart</h4>
-        </div>
-        <div></div>
-        <div>
-            {basket.length === 0 
-                ? <p>No items to display</p>
-                : <p></p>}
-        </div>
     </div>
        
             {basketItemNodes}
@@ -58,7 +50,7 @@ const Basket = ({basket, total}) => {
         <div>&nbsp;</div>
         <div>
             {basket.length === 0 
-                ? <p></p>
+                ? <p>No item to display</p>
                 : <b>Total:</b> 
             }
         </div>
