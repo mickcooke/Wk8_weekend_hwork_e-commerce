@@ -5,9 +5,10 @@ import './BasketItem.css';
 const Basket = ({basket, total, delBasketItem}) => {
 
  
-    const basketItemNodes = basket.map((basketItem) => {
+    const basketItemNodes = basket.map((basketItem, index) => {
     return (<BasketItem 
-        key={basketItem.id} 
+        key={index} 
+        index={index}
         basketItem={basketItem}
         delBasketItem={delBasketItem}
         />);

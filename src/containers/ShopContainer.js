@@ -82,14 +82,18 @@ const findProductById = (id) => {
   });
 }
 
-const handleDelBasketItem = id => {
-    const productToDelete= findProductById(id)
-    subtractFromTotal(productToDelete.price);
-    const filteredBasket = basket.filter((product) => {
-        return product.id !== id
-    } );
+const handleDelBasketItem = index => {
+    // const productToDelete= findProductById(id)
+    // subtractFromTotal(productToDelete.price);
+    // const filteredBasket = basket.filter((product) => {
+    //     return product.id !== parseInt(id)
+    // } );
+    // setBasket(filteredBasket);
+    console.log(typeof(index));
+
+    const filteredBasket = basket.splice(index, 1);
     setBasket(filteredBasket);
-   
+  
 
 }
 
