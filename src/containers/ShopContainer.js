@@ -85,14 +85,14 @@ const findProductById = (id) => {
 const handleDelBasketItem = index => {
     // const productToDelete= findProductById(id)
     // subtractFromTotal(productToDelete.price);
-    // const filteredBasket = basket.filter((product) => {
-    //     return product.id !== parseInt(id)
-    // } );
-    // setBasket(filteredBasket);
-    console.log(typeof(index));
-
-    const filteredBasket = basket.splice(index, 1);
+    const filteredBasket = basket.filter((product) => {
+        return basket.indexOf(product) !== parseInt(index)
+    } );
     setBasket(filteredBasket);
+    // console.log(parseInt(index));
+
+    // const filteredBasket = basket.splice(parseInt(index), 1);
+    // setBasket(filteredBasket);
   
 
 }

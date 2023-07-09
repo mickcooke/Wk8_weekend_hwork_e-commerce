@@ -14,11 +14,11 @@ const BasketItem = ({basketItem, delBasketItem, index}) => {
     <>
     <div className="grid-columns">
         <div>
-            {basketItem.name}{basketItem.id}
+            {basketItem.name}{index}
         </div>
         <div>  
             £{basketItem.price.toFixed(2)}  
-            &nbsp;<button onClick={handleClick}key={index} value={index}>del</button>  
+            &nbsp;<button onClick={handleClick} key={index} value={index}>del</button>  
         </div>
     </div>
     </>
