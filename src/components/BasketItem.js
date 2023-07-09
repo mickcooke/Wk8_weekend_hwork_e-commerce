@@ -4,14 +4,11 @@ import './BasketItem.css';
 
 const BasketItem = ({basketItem}) => {
 
-    if (!basketItem){
-        return (
-            <p>No items in cart</p>
-        )
-    }else{
+   
 
 
   return (
+   
     <>
     <div className="grid-columns">
         <div>
@@ -23,7 +20,9 @@ const BasketItem = ({basketItem}) => {
     </div>
     </>
 
-  )}
+
+
+  )
 };
 
 export default BasketItem;

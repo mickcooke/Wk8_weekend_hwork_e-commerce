@@ -19,24 +19,58 @@ const Basket = ({basket, total}) => {
 
   return (
 
-    <>
+    // <>
+    // <div className='grid-columns'>
+    //     <div>
+    //         <h4>Shopping Cart</h4>
+    //     </div>
+    // </div>
+    // {basketItemNodes}
+    // <div className='grid-columns'>
+    //     <div>&nbsp;</div>
+    //     <div>&nbsp;</div>
+    //     <div>
+    //         <b>Total:</b> 
+    //     </div>
+    //     <div>
+    //         <b>£{total.toFixed(2)}</b> 
+    //     </div>
+    // </div>
+    // </>
+
+<>
     <div className='grid-columns'>
         <div>
             <h4>Shopping Cart</h4>
         </div>
+        <div></div>
+        <div>
+            {basket.length === 0 
+                ? <p>No items to display</p>
+                : <p></p>}
+        </div>
     </div>
-    {basketItemNodes}
+       
+            {basketItemNodes}
+        
     <div className='grid-columns'>
         <div>&nbsp;</div>
         <div>&nbsp;</div>
         <div>
-            <b>Total:</b> 
+            {basket.length === 0 
+                ? <p></p>
+                : <b>Total:</b> 
+            }
         </div>
-        <div>
-            <b>£{total.toFixed(2)}</b> 
+        <div> 
+            {basket.length === 0 
+                ? <p></p>
+                : <b>£{total.toFixed(2)}</b>
+            }
         </div>
     </div>
     </>
+
   );
 
 
