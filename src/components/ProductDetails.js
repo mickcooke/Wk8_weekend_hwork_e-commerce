@@ -6,19 +6,27 @@ const ProductDetails = ({products}) => {
   
  const {id} = useParams();
  const productId = parseInt(id)
-
  const selectedProduct = products.find((product) => {
     return product.id === productId;
  });
 
  console.log(selectedProduct);
 
-
+if(!selectedProduct){
+    return null
+}
 
  return (
     <>
-    <p>This is a product page</p>
-    </>
+    
+ <p>{selectedProduct.name}</p>
+ <p>{selectedProduct.description}</p>
+ </>
+    // <>
+   
+    // <p>£{selectedProduct.price.toFixed(2)}</p>
+    // <img src={require(`../images/${selectedProduct.image}`)}/>
+    // </>
  )
 
 }
