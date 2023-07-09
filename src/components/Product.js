@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import React from "react";
+import SelectProductButton from './SelectProductButton';
 
 const Img = styled.img`
 width:100px;
@@ -30,20 +31,12 @@ const DescriptionBox = styled(ItemBox)`
 text-align: left;
 `
 
-const Button = styled.button`
-font-size: 0.5em;
-font-weight: bold;
-  padding: 1em;
-  margin: 0.5em;
-  border: 2px solid black;
-`
+
 
 const Product = ({product, onProductSelected}) => {
 
-    const handleClick = event => {
-        onProductSelected(event.target.value);
 
-    }
+
 
     return (
   
@@ -55,7 +48,7 @@ const Product = ({product, onProductSelected}) => {
         <Paragraph>{product.description}</Paragraph>
         </DescriptionBox>
         <PriceText>£{product.price.toFixed(2)}</PriceText>
-        <Button onClick={handleClick} key={product.id} value={product.id}>ADD TO CART</Button>
+        <SelectProductButton onProductSelected={onProductSelected} product={product} />
         <br></br>
         <br></br>
         </ItemBox>
