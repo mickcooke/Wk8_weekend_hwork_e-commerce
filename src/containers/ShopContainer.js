@@ -33,7 +33,7 @@ const ShopContainer = () => {
             price: 160.00,
             description: "Captured in a space with almost no natural reverb, this versatile library brings out the fine detail of instruments and lets you choose your own reverbs. Ideal for classical, jazz, pop and more.",
             image: "image1.jpeg",
-            id: "1"
+            id: 1
 
         },
 
@@ -42,7 +42,7 @@ const ShopContainer = () => {
             price: 699.00,
             description: "Part of our flagship orchestral range. 60 players performing 175 articulations, including legatos, in the reverberant surroundings of The Hall at AIR Studios, the home of blockbuster film scores.",
             image: "image2.jpeg",
-            id: "2"
+            id: 2
 
         },
 
@@ -51,7 +51,7 @@ const ShopContainer = () => {
             price: 169.00,
             description: "Captured in a space with almost no natural reverb, this versatile library brings out the fine detail of instruments and lets you choose your own reverbs. Ideal for classical, jazz, pop and more.",
             image: "image3.jpeg",
-            id: "3"
+            id: 3
 
         },
 
@@ -60,7 +60,7 @@ const ShopContainer = () => {
             price: 549.00,
             description: "Crafted and conducted by Grammy winner Eric Whitacre and showcasing his elite family of singers, this encyclopaedia of the voice will enrich your compositions.",
             image: "image4.jpeg",
-            id: "4"
+            id: 4
 
         },
 
@@ -78,15 +78,15 @@ useEffect(() => {
 
 const findProductById = (id) => {
   return products.find((product) => {
-    return product.id === id;
+    return product.id === parseInt(id);
   });
 }
 
-const handleDelBasketItem = index => {
-    // const productToDelete= findProductById(id)
-    // subtractFromTotal(productToDelete.price);
+const handleDelBasketItem = id=> {
+    const productToDelete= findProductById(id)
+    subtractFromTotal(productToDelete.price);
     const filteredBasket = basket.filter((product) => {
-        return basket.indexOf(product) !== parseInt(index)
+        return product.id !== parseInt(id)
     } );
     setBasket(filteredBasket);
     // console.log(parseInt(index));

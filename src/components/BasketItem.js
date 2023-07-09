@@ -18,7 +18,7 @@ const BasketItem = ({basketItem, delBasketItem, index}) => {
         </div>
         <div>  
             £{basketItem.price.toFixed(2)}  
-            &nbsp;<button onClick={handleClick} key={index} value={index}>del</button>  
+            &nbsp;<button onClick={handleClick} key={basketItem.id} value={basketItem.id}>del</button>  
         </div>
     </div>
     </>
